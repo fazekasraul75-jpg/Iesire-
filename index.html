@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O întrebare 😊</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(0,0,0,.1);
+    width:90%;
+    max-width:400px;
+}
+
+button{
+    padding:12px 24px;
+    border:none;
+    border-radius:10px;
+    margin:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+#da{
+    background:#4CAF50;
+    color:white;
+}
+
+#nu{
+    background:#ff4d4d;
+    color:white;
+    position:relative;
+}
+
+input{
+    padding:10px;
+    margin-top:15px;
+    width:90%;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="pagina1">
+    <h2>Salut 😊</h2>
+    <p>Ai chef să ieșim într-o zi?</p>
+
+    <button id="da" onclick="urmator()">Da</button>
+    <button id="nu">Nu</button>
+</div>
+
+<div class="card" id="pagina2" style="display:none">
+    <h2>Super! 😄</h2>
+    <p>Când ai fi liberă?</p>
+
+    <input type="date"><br>
+
+    <button onclick="final()">Confirmă</button>
+</div>
+
+<div class="card" id="pagina3" style="display:none">
+    <h2>Perfect! 🎉</h2>
+    <p>Abia aștept să ieșim.</p>
+</div>
+
+<script>
+function urmator(){
+    document.getElementById("pagina1").style.display="none";
+    document.getElementById("pagina2").style.display="block";
+}
+
+function final(){
+    document.getElementById("pagina2").style.display="none";
+    document.getElementById("pagina3").style.display="block";
+}
+
+const nu = document.getElementById("nu");
+
+nu.addEventListener("mouseover", () => {
+    nu.style.position="absolute";
+    nu.style.left=Math.random()*80+"%";
+    nu.style.top=Math.random()*80+"%";
+});
+</script>
+
+</body>
+</html>
